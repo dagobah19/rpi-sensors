@@ -20,7 +20,9 @@ try:
         v = (mcp.read_adc(0) / 1023.0) * 3.3
         # math to convert the reading into an actual distance
         dist = 16.2537 * v**4 - 129.893 * v**3 + 382.268 * v**2 - 512.611 * v + 301.439
-        print("Distance {:.2f}".format(dist))
+        print("Distance in cm {:.2f}".format(dist))
+        dist_inch = dist / 2.54
+        print("Distance in inches {:.2f}".format(dist_inch))
         time.sleep(delay)
 except KeyboardInterrupt:
     print("Exiting program")
